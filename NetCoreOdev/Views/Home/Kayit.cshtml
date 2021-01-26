@@ -1,0 +1,46 @@
+﻿@using NetCoreOdev.Models
+@model UserResponse
+
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+
+<form method="post" asp-action="Kayit" asp-controller="Home">
+    <div class="form-group">
+        <label>Adınız:</label>
+        <input class="form-control" asp-for="@Model.Name" />
+        <span asp-validation-for="@Model.Name"></span>
+    </div>
+    <div class="form-group">
+        <label>Soyadınız:</label>
+        <input class="form-control" asp-for="@Model.LastName" />
+        <span asp-validation-for="@Model.LastName"></span>
+    </div>
+    <div class="form-group">
+        <label>Eposta:</label>
+        <input class="form-control" asp-for="@Model.Email" />
+        <span asp-validation-for="@Model.Email"></span>
+    </div>
+    <div class="form-group">
+        <label>Doğum tarihi:</label>
+        <input class="form-control" asp-for="@Model.BirthDate" />
+        <span asp-validation-for="@Model.Email"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Katılmak istediğiniz kursu seçin</label>
+        <select class="form-control" asp-for="@Model.course.Id">
+
+            <option value=0>Tiyatro kursu</option>
+            <option value=1>Bateri kursu </option>
+            <option value=2>Gitar kursu</option>
+
+            <!--TODO 1 Course modelini buraya getir-->
+           
+
+        </select>
+        <span asp-validation-for="@Model.course.Id"></span>
+    </div>
+    <input type="submit" name="name" value="Kaydol" class="btn btn-danger" />
+</form>

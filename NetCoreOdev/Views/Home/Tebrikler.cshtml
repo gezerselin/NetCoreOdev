@@ -1,0 +1,20 @@
+﻿@model UserResponse
+@{
+    Layout = Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model.course.Id == 0)
+{
+    <p>Tebrikler tiyatro kursuna kaydınız başarıyla tamamlandı!!!</p>
+    <p> Kurstaki kişi listesini görmek için <a asp-action="TiyatroKayitListe" asp-controller="Home" class="btn btn-succes">tıklayınız</a> </p>
+}
+else if (Model.course.Id == 1)
+{
+    <p>Tebrikler bateri kursuna kaydınız başarıyla tamamlandı!!!</p>
+    <p> Kurstaki kişi listesini görmek için <a asp-action="BateriKayitListe" asp-controller="Home" class="btn btn-succes">tıklayınız</a> </p>
+}
+else
+{
+    <p>Tebrikler gitar kursuna kaydınız başarıyla tamamlandı!!!</p>
+    <p> Kurstaki kişi listesini görmek için <a asp-action="GitarKayitListe" asp-controller="Home" class="btn btn-succes">tıklayınız</a> </p>
+}

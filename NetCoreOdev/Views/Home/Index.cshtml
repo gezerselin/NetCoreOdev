@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Course>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Hoş Geldiniz </h1>
+
+<ul>
+    @foreach(var item in Model)
+    {
+         <li> @item.CourseName : @item.Price tl</li>
+         //TODO 2: resim ekle 
+
+    }
+</ul>
+Kurslara kayıt yaptırmak için <a asp-action="Kayit" asp-controller="Home" class="btn btn-succes" >tıklayınız</a>
